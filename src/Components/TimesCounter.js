@@ -41,6 +41,7 @@ TimesCounter.propTypes = {
     total: PropTypes.number,
     sunny: PropTypes.number,
     surf: PropTypes.number,
+    goal: PropTypes.number
 }
 
 

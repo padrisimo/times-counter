@@ -1,5 +1,5 @@
 import { TiWaves, TiAdjustBrightness } from 'react-icons/ti';
-import { GoCalendar } from 'react-icons/go';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 
@@ -11,3 +11,10 @@ export const CountDaysRow = ({ beach, date, sunny, surf }) => (
     <td>{surf && <TiWaves />}</td>
   </tr>
 );
+
+CountDaysRow.propTypes = {
+  beach: PropTypes.string.isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
+  sunny: PropTypes.bool,
+  surf: PropTypes.bool
+};

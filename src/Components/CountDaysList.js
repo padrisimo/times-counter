@@ -1,7 +1,6 @@
-import { TiWaves, TiAdjustBrightness } from 'react-icons/ti';
-import { GoCalendar } from 'react-icons/go';
-import { CountDaysRow } from './CountDaysRow';
 import React from 'react';
+import PropTypes from 'prop-types';
+import { CountDaysRow } from './CountDaysRow';
 
 export const CountDaysList = ({ days }) => (
   <table>
@@ -21,3 +20,19 @@ export const CountDaysList = ({ days }) => (
     </tbody>
   </table>
 );
+
+CountDaysList.propTypes = {
+  days: props => {
+    if(!Array.isArray(props.days)){
+      return new Error(
+        "CountDaysList should be an array"
+      )
+    } else if (!props.days.length){
+      return new Error (
+        "CountDaysList must have at least one record"
+      )
+    } else {
+      return null;
+    }
+  }
+}
