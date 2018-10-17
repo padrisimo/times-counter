@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { CountDaysList } from './CountDaysList';
 import { TimesCounter } from './TimesCounter';
 import AddDayForm from './AddDayForm';
+import Menu from './Menu';
 
 class App extends Component {
   state = {
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <Menu />
         {(this.props.location.pathname === '/') ?
           <TimesCounter
             total={this.countDays()}
