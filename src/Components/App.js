@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { CountDaysList } from './CountDaysList';
 import { TimesCounter } from './TimesCounter';
+import AddDayForm from './AddDayForm';
 
 class App extends Component {
   state = {
@@ -11,17 +12,20 @@ class App extends Component {
     ]
   }
 
-  countDays = (filter) => this.state.days.filter(day => filter ? day[filter] : day ).length;
+  countDays = (filter) => this.state.days.filter(day => filter ? day[filter] : day).length;
 
   render() {
     return (
-      <div className='app'>
-        <CountDaysList days={this.state.days} />
-        <TimesCounter
-          total={this.countDays()}
-          surf={this.countDays("surf")}
-          sunny={this.countDays("sunny")}
-        />
+      <div className="app">
+        {(this.props.location.pathname === '/') ?
+          <TimesCounter
+            total={this.countDays()}
+            surf={this.countDays('surf')}
+            sunny={this.countDays('sunny')}
+          /> : (this.props.location.pathname === '/add-day') ?
+            <AddDayForm /> :
+            <CountDaysList days={this.state.days} />
+        }
       </div>
     );
   }
