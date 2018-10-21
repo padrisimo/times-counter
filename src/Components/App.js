@@ -26,7 +26,11 @@ class App extends Component {
             sunny={this.countDays('sunny')}
           /> : (this.props.location.pathname === '/add-day') ?
             <AddDayForm /> :
-            <CountDaysList days={this.state.days} />
+            <CountDaysList 
+            {...this.props}
+              days={this.state.days}
+            />
+            
         }
       </div>
     );
