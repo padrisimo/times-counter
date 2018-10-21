@@ -5,7 +5,6 @@ import './Styles/index.scss';
 import App from './components/App';
 import { Whoops404 } from './components/Whoops404';
 import registerServiceWorker from './registerServiceWorker';
-import { CountDaysList } from './components/CountDaysList';
 
 ReactDOM.render(
   <Router>
