@@ -13,6 +13,7 @@ export const TimesCounter = ({ surf=25, goal=75, sunny=24, total=50 }) => (
     <div className="ski-day-count">
         <div className="total-days">
             <span>{total} </span>
+            github is hacked
             <GoCalendar style={{color: 'SlateGray'}}/>
             <span>days</span>
         </div>
